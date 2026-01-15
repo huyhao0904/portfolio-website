@@ -103,10 +103,24 @@ a {
 }
 
 /* ---------- SKILLS ---------- */
-.skill span {
-  display: block;
+.skill {
+  padding: 20px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 8px;
+}
+
+.skill-header span {
+  font-size: 14px;
   font-weight: 500;
+}
+
+.skill-header .percent {
+  color: var(--accent);
 }
 
 .bar {
@@ -118,7 +132,18 @@ a {
 
 .bar div {
   height: 100%;
-  background: var(--accent);
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  width: 0;
+  animation: skillGrow 1.2s ease forwards;
+}
+
+@keyframes skillGrow {
+  from {
+    width: 0;
+  }
+}
+.skill:hover .bar div {
+  filter: brightness(1.2);
 }
 
 /* ---------- FOOTER ---------- */
@@ -193,6 +218,7 @@ footer {
 }
 .stats {
   display: flex;
+  
   gap: 40px;
   margin-top: 40px;
 }
